@@ -11,7 +11,7 @@ export function parseTableLeafPage(
   header: DatabaseHeader
 ): TableLeafPage {
   const { cellPointerArray, data } = page;
-  const view = new DataView(data.buffer, data.byteOffset, data.byteLength);
+  const view = new DataView(data.buffer, data.byteOffset);
 
   // Max local size
   const usableSize = header.pageSize - header.reservedSpace;
